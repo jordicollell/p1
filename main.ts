@@ -1,30 +1,16 @@
 input.onButtonPressed(Button.A, function () {
-    basic.showLeds(`
-        # . . . #
-        . # . # .
-        . . # . .
-        . # . # .
-        # . . . #
-        `)
+    radio.sendString("ESQUERRA")
 })
 input.onButtonPressed(Button.AB, function () {
-    basic.showLeds(`
-        # # # # #
-        # . # . #
-        # # # # #
-        # . # . #
-        # # # # #
-        `)
+    radio.sendString("PARAR")
 })
 input.onButtonPressed(Button.B, function () {
-    basic.showLeds(`
-        # # # # #
-        # . . . #
-        # . . . #
-        # . . . #
-        # # # # #
-        `)
+    radio.sendString("DRETA")
 })
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    radio.sendString("ENDAVANT")
+})
+radio.setGroup(1)
 basic.showLeds(`
     . . . . .
     . . . . .
@@ -32,6 +18,3 @@ basic.showLeds(`
     . . . . .
     . . . . .
     `)
-basic.forever(function () {
-	
-})
